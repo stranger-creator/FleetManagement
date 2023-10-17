@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Occupies 100% of viewport height */
+    width: 200px; /* Set the desired width */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    margin: 10px 0;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #ff9900;
+  }
+  
