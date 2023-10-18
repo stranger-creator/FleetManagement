@@ -1,36 +1,44 @@
 .navbar {
-    background-color: #000;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh; /* Occupies 100% of viewport height */
-    width: 200px; /* Set the desired width */
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navbar li {
-    margin: 10px 0;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    transition: 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #ff9900;
-  }
-  
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 20px 0;
+  font-size: 22px  ;
+  font-family: cursive;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  font-family: cursive;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ff9900; /* Change text color on hover */
+}
+
+.navbar li:hover {
+  color: #ff9900;
+  cursor: pointer; /* Change cursor to a hand icon on hover */
+}
