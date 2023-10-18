@@ -1,6 +1,6 @@
 /* Navigation Bar */
 .navbar {
-  background-color: #000000;
+  background-color: #000;
   color: #fff;
   position: fixed;
   top: 0;
@@ -58,21 +58,40 @@
 
 .navbar li:hover {
   cursor: pointer;
-  color: #ff9900;
-  transform: translateX(5px);
 }
 
 /* Toggle Button */
 .toggle-button {
-  display: none; /* Initially hide the toggle button */
+  display: none;
   cursor: pointer;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Show the toggle button on xs screens */
+/* Show the toggle button on small screens */
+@media (max-width: 768px) {
+  .toggle-button.visible-on-sm {
+    display: block;
+  }
+}
+/* Add custom CSS class to control visibility on xs and sm screens */
+.toggle-button.visible-on-xs {
+  display: none;
+}
+
+.toggle-button.visible-on-sm {
+  display: none;
+}
+
+/* Show the toggle button on xs and sm screens */
 @media (max-width: 576px) {
   .toggle-button.visible-on-xs {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-button.visible-on-sm {
     display: block;
   }
 }

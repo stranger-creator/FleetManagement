@@ -1,0 +1,59 @@
+/* About.css */
+
+.about-container {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    padding: 40px;
+    
+    color: #fff; /* White text color */
+    align-items: center;
+  }
+  
+  .about-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 20%; /* Add a left margin of 20% */
+    text-align: left;
+  }
+  
+  .about-title {
+    font-size: 36px;
+    color: #ff6c00; /* Orange title */
+    font-weight: 700; /* Bold */
+    margin-bottom: 20px;
+  }
+  
+  .about-text {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .btn-orange {
+    background-color: #ff6c00; /* Orange button background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-weight: 700; /* Bold text */
+    transition: background-color 0.3s;
+  }
+  
+  .btn-orange:hover {
+    background-color: #e65100; /* Darker orange on hover */
+  }
+  
+  .image-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .fleet-image {
+    max-width: 100%;
+   
+    border-radius: 5px;
+    margin: 20px;
+    margin-left: 40%;
+  }
+  

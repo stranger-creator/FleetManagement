@@ -83,10 +83,10 @@ const Navbar = () => {
             {activeDropdown === 'services' && (
               <ul className="dropdown">
                 <li>
-                  <Link to="/services/subitem1">Subitem 1</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </li>
                 <li>
-                  <Link to="/services/subitem2">Subitem 2</Link>
+                  <Link to="/about">About Us</Link>
                 </li>
               </ul>
             )}
