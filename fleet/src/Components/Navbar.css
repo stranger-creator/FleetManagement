@@ -1,44 +1,78 @@
+/* Navigation Bar */
 .navbar {
-  background-color: #000;
+  background-color: #000000;
   color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 200px;
-  padding: 10px 0;
+  width: 220px;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  border-right: 1px solid #555;
+  transition: transform 0.3s;
+  transform: translateX(0);
 }
 
+.navbar.active {
+  transform: translateX(-220px);
+}
+
+/* Navigation List */
 .navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Navigation Items */
 .navbar li {
   margin: 20px 0;
-  font-size: 22px  ;
-  font-family: cursive;
+  font-size: 18px;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-transform: uppercase;
 }
 
+/* Navigation Links */
 .navbar a {
   text-decoration: none;
   color: #fff;
-  font-size: 17px;
-  font-family: cursive;
+  font-size: 16px;
+  font-weight: 500;
   transition: 0.3s;
-  font-weight: bold;
 }
 
 .navbar a:hover {
-  color: #ff9900; /* Change text color on hover */
+  color: #ff9900;
+  transform: translateX(5px);
+}
+
+.navbar a.active {
+  color: #ff9900;
+  font-weight: 600;
 }
 
 .navbar li:hover {
+  cursor: pointer;
   color: #ff9900;
-  cursor: pointer; /* Change cursor to a hand icon on hover */
+  transform: translateX(5px);
+}
+
+/* Toggle Button */
+.toggle-button {
+  display: none; /* Initially hide the toggle button */
+  cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Show the toggle button on xs screens */
+@media (max-width: 576px) {
+  .toggle-button.visible-on-xs {
+    display: block;
+  }
 }
