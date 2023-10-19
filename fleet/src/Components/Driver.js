@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import axios from 'axios';
-import './Driver.css'; // Import the external CSS file
+import './Driver.css';
 
 const Driver = () => {
   const [driverData, setDriverData] = useState(null);
   const [authUser, setAuthUser] = useState(null);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -43,28 +44,42 @@ const Driver = () => {
     }
   }, [authUser]);
 
+  const handleCardFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="driver-card">
-            <h2 className="card-title">Driver Information</h2>
-            {driverData ? (
-              <div>
-                <p className="card-text">Name: {driverData.name}</p>
-                <p className="card-text">Email: {driverData.email}</p>
-                <p className="card-text">Age: {driverData.age}</p>
-                <p className="card-text">Experience: {driverData.experience}</p>
-                <p className="card-text">License Number: {driverData.licenseNumber}</p>
-                {/* Add more fields as needed */}
+    <center>
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <div className={`driver-card ${isFlipped ? 'is-flipped' : ''}`}>
+              <div className="driver-card-inner">
+                <div className="driver-card-front">
+                  <h2 className="card-title">Driver Information</h2>
+                  <img src="https://cdn-icons-png.flaticon.com/512/3001/3001764.png" alt="Driver's Image" className="driver-image" />
+                </div>
+                <div className="driver-card-back">
+                  {driverData ? (
+                    <div>
+                      <h2 className="card-title">Driver Information</h2>
+                      <p className="card-text">Name: {driverData.name}</p>
+                      <p className="card-text">Email: {driverData.email}</p>
+                      <p className="card-text">Age: {driverData.age}</p>
+                      <p className="card-text">Experience: {driverData.experience}</p>
+                      <p className="card-text">License Number: {driverData.licenseNumber}</p>
+                      {/* Add more fields as needed */}
+                    </div>
+                  ) : (
+                    <p className="card-text">Loading driver information...</p>
+                  )}
+                </div>
               </div>
-            ) : (
-              <p className="card-text">Loading driver information...</p>
-            )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </center>
   );
 };
 
