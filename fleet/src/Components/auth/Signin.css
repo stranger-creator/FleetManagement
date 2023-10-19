@@ -1,0 +1,37 @@
+/* Signin.css */
+.sign-in-container {
+    background: #ff9900; /* Orange background color */
+    color: white; /* White text color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    max-width: 400px; /* Maximum width of the card */
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 20px; /* Add some padding inside the card */
+  }
+  
+  .sign-in-container h2 {
+    text-align: center; /* Center the heading text */
+  }
+  
+  .sign-in-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .sign-in-container button {
+    background: #ff6600; /* Slightly darker orange for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .sign-in-container button:hover {
+    background: #ff3300; /* Darker orange on hover */
+  }
+  

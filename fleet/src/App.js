@@ -7,19 +7,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from './Components/Navbar'
 import Signin from './Components/auth/Signin'
 import Signup from './Components/auth/Signup'
-import AuthDetails from './Components/AuthDetails'
+import Driver from './Components/Driver'
 function App(){
   return(
     <>
    <BrowserRouter>
-   <Signin></Signin>
-    <Signup></Signup>
-    <AuthDetails></AuthDetails>
+  <Navbar></Navbar>
    
    <Routes>
     <Route path="/"element={<Home />}></Route>
     <Route path="/contact" element={<Contact />}></Route>
     <Route path="/about" element={<About />}></Route>
+    <Route path="/login" element={<Signin />}></Route>
+    <Route path="/signup" element={<Signup />}></Route>
+    <Route path="/driverinfo" element={<Driver />}></Route>
  
     
     
