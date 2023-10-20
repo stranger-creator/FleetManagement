@@ -2,4 +2,25 @@
     margin-left: 220px; /* Adjust the margin to align with the Navbar width */
     padding: 20px; /* Add padding for spacing */
   }
-  
+  /* Home.css */
+
+/* Home.css */
+.home-container {
+  background-color: #f0f0f0; /* Set the background color to a light gray */
+  font-family: 'Arial, sans-serif'; /* Apply a custom font family */
+  padding: 20px; /* Add some padding for spacing */
+}
+
+.schedule-header {
+  font-size: 28px; /* Increase the font size for the schedule header */
+  font-weight: bold; /* Apply bold font weight */
+  color: #000000; /* Change the text color to a shade of blue */
+  margin-bottom: 20px; /* Add margin to separate the header from content */
+  background-color: rgb(121, 200, 228);
+  border-radius: 10px;
+  text-align:center;
+}
+
+.home-content {
+  text-align: center; /* Center align text within the home-content container */
+}
