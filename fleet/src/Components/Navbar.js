@@ -87,7 +87,7 @@ const Navbar = () => {
                   <Link to="/driverinfo">Driver Details</Link>
                 </li>
                 <li>
-                  <Link to="/fleet/subitem2">Subitem 2</Link>
+                  <Link to="/driverlist">Drivers list</Link>
                 </li>
               </ul>
             )}
