@@ -12,15 +12,20 @@
 }
 
 .schedule-header {
-  font-size: 28px; /* Increase the font size for the schedule header */
-  font-weight: bold; /* Apply bold font weight */
-  color: #000000; /* Change the text color to a shade of blue */
-  margin-bottom: 20px; /* Add margin to separate the header from content */
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
   background-color: rgb(121, 200, 228);
   border-radius: 10px;
-  text-align:center;
+  text-align: left; /* Align the text to the left */
+  padding: 20px 0 20px 20px; /* Add padding to the right side */
 }
 
 .home-content {
   text-align: center; /* Center align text within the home-content container */
+}
+.row-card{
+  justify-content: right;
+  align-items:end
 }

@@ -4,7 +4,11 @@ export default function Carousel() {
   const containerStyle = {
     borderRadius: '20px', // Add border-radius for curved container
     overflow: 'hidden', // Ensure that content doesn't overflow the curved corners
-  color:'black'};
+    margin: '0 auto', // Center the carousel horizontally
+    marginLeft: '325px', // Add left margin to move it to the right
+    width: '70%', // Adjust the width as needed
+    
+  };
 
   const imageStyle = {
     height: '400px', // Set the desired height here
@@ -12,6 +16,7 @@ export default function Carousel() {
   };
 
   return (
+    <center>
     <div id="carouselExampleRide" className="carousel slide" data-bs-ride="carousel" style={containerStyle}>
       <div className="carousel-inner">
         <div className="carousel-item active" data-bs-interval="3000">
@@ -63,9 +68,10 @@ export default function Carousel() {
         data-bs-target="#carouselExampleRide"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="carousel-control-next-icon" ariahidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>
+    </center>
   );
 }
