@@ -3,11 +3,11 @@
   position: relative;
   top:0;
   right: 0; /* Position it at the extreme right */
-  width: 280px;
-  height: 360px;
+  width: 380px;
+  height: 460px;
   perspective: 1000px;
   border-radius: 15px;
-  margin-left: 150px;
+  margin-left: 90px;
   align-self: flex-start;
 }
 .driver-card-inner {
