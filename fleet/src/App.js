@@ -8,10 +8,14 @@ import Navbar from './Components/Navbar'
 import Signin from './Components/auth/Signin'
 import Signup from './Components/auth/Signup'
 import Driver from './Components/Driver'
+import Complaint from './Components/Complaint'
+import DriverList from './Components/DriverList'
+
 function App(){
   return(
     <>
    <BrowserRouter>
+   
   <Navbar></Navbar>
    
    <Routes>
@@ -21,11 +25,15 @@ function App(){
     <Route path="/login" element={<Signin />}></Route>
     <Route path="/signup" element={<Signup />}></Route>
     <Route path="/driverinfo" element={<Driver />}></Route>
+    <Route path="/complaint" element={<Complaint />}></Route>
+    <Route path="/driverlist" element={<DriverList />}></Route>
  
     
     
       </Routes>
+
       </BrowserRouter>
+     
     </>
   )
 }

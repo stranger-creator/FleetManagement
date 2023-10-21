@@ -50,9 +50,7 @@ const Driver = () => {
 
   return (
     <center>
-      <div className="container mt-5">
-        <div className="row justify-content-center">
-          <div className="col-md-8">
+     
             <div className={`driver-card ${isFlipped ? 'is-flipped' : ''}`}>
               <div className="driver-card-inner">
                 <div className="driver-card-front">
@@ -76,9 +74,7 @@ const Driver = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          
     </center>
   );
 };

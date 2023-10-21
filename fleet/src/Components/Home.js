@@ -53,20 +53,24 @@ const Home = () => {
         <div className="col-md-2">
           {/* Navbar content */}
         </div>
-      </div>
-      <div className="row justify-content-center align-items-center">
-        <div className="col-md-12 text-center">
-          <Carousel />
-        </div>
-      </div>
-      <div className="row justify-content-center align-items-center">
-        <div className="col-md-5 offset-md-1">
-          <div className="home-content">
-            <BusSchedule />
+       
+        <div className="col-md-10">
+          <div className="row justify-content-center align-items-center">
+            <div className="col-md-12 text-center">
+              <Carousel />
+            </div>
           </div>
-        </div>
-        <div className="col-md-5">
-          <Driver driverData={driverData} />
+          
+          <div className="row justify-content-start align-items-start">
+            <div className="col-md-4">
+              <div className="home-content">
+                <BusSchedule />
+              </div>
+            </div>
+            <div className="col-md-3 custom-driver-card">
+              <Driver driverData={driverData} />
+            </div>
+          </div>
         </div>
       </div>
     </div>

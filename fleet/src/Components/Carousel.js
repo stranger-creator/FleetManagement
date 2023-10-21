@@ -5,8 +5,9 @@ export default function Carousel() {
     borderRadius: '20px', // Add border-radius for curved container
     overflow: 'hidden', // Ensure that content doesn't overflow the curved corners
     margin: '0 auto', // Center the carousel horizontally
-    marginLeft: '325px', // Add left margin to move it to the right
-    width: '70%', // Adjust the width as needed
+    marginLeft: '50px', // Add left margin to move it to the right
+    width: '90%', // Adjust the width as needed
+   
     
   };
 

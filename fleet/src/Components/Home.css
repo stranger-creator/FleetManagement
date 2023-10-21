@@ -6,7 +6,7 @@
 
 /* Home.css */
 .home-container {
-  background-color: #f0f0f0; /* Set the background color to a light gray */
+  background-color: #fff; /* Set the background color to a light gray */
   font-family: 'Arial, sans-serif'; /* Apply a custom font family */
   padding: 20px; /* Add some padding for spacing */
 }
@@ -23,9 +23,18 @@
 }
 
 .home-content {
-  text-align: center; /* Center align text within the home-content container */
+  text-align: center;
+  margin-left: 90px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Center align text within the home-content container */
 }
 .row-card{
   justify-content: right;
   align-items:end
 }
+.custom-driver-card {
+  margin-top: 120px; /* Adjust the top margin as needed */
+  margin-left: 250px; /* Adjust the left margin as needed */
+}
+

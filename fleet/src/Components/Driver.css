@@ -1,12 +1,15 @@
 /* Driver card styles */
 .driver-card {
   position: relative;
-  width: 400px;
-  height: 480px;
+  top:0;
+  right: 0; /* Position it at the extreme right */
+  width: 280px;
+  height: 360px;
   perspective: 1000px;
-  border-radius: 15px; /* Adding rounded corners */
+  border-radius: 15px;
+  margin-left: 150px;
+  align-self: flex-start;
 }
-
 .driver-card-inner {
   width: 100%;
   height: 100%;

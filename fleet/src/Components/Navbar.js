@@ -102,6 +102,9 @@ const Navbar = () => {
                 <li>
                   <Link to="/about">About Us</Link>
                 </li>
+                <li>
+                <Link to="/complaint">Complaint</Link>
+                </li>
               </ul>
             )}
           </li>
