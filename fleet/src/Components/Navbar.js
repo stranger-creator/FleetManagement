@@ -71,7 +71,7 @@ const Navbar = () => {
             {activeDropdown === 'schedule' && (
               <ul className="dropdown">
                 <li>
-                  <Link to="/schedule/subitem1">Subitem 1</Link>
+                  <Link to="/toda">Today's Schedule</Link>
                 </li>
                 <li>
                   <Link to="/schedule/subitem2">Subitem 2</Link>
