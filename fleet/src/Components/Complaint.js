@@ -1,20 +1,29 @@
-// ComplaintForm.js
+import './Complaint.css'; // Keep this line
 import React, { useState } from 'react';
-import './Complaint.css';
 
 function Complaint() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     complaint: '',
+    image: null, // Store the uploaded image here
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, type, files } = e.target;
+
+    // Check if the input type is 'file' to handle image uploads
+    if (type === 'file') {
+      setFormData({
+        ...formData,
+        [name]: files[0], // Store the uploaded file (image)
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -24,8 +33,8 @@ function Complaint() {
   };
 
   return (
-    <div className="container">
-      <h1>Report your complaint </h1>
+    <div className="complaint-container mt-5">
+      <h1>Report the Complaint</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Your Name:</label>
         <input
@@ -55,6 +64,15 @@ function Complaint() {
           onChange={handleChange}
           rows="4"
           required
+        />
+
+        <label htmlFor="image">Please add your image of the issue:</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*" // Allow only image files
+          onChange={handleChange}
         />
 
         <button type="submit">Submit Complaint</button>

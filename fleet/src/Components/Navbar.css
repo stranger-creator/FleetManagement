@@ -74,6 +74,7 @@
     display: block;
   }
 }
+
 /* Add custom CSS class to control visibility on xs and sm screens */
 .toggle-button.visible-on-xs {
   display: none;
@@ -95,7 +96,8 @@
     display: block;
   }
 }
-/* Add these styles to your CSS */
+
+/* Login Button */
 .login-button button {
   background-color: #ff6600;
   color: white;
@@ -107,7 +109,7 @@
   transition: background-color 0.3s ease;
 }
 
-/* Add a hover effect to the button */
 .login-button button:hover {
-  background-color: #ff4500; /* Change the color when hovering */
+  background-color: #ff4500;
+  transition: background-color 0.3s ease;
 }

@@ -71,7 +71,7 @@ const Signup = () => {
   };
 
   return (
-    <div className='sign-in-container'>
+    <div className='sign-in-container mt-5'>
       <form onSubmit={signUp}>
         <h2>Sign Up</h2>
         <input

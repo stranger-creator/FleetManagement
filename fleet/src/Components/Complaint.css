@@ -1,48 +1,57 @@
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  button[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+/* Complaint.css */
+.complaint-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ffa500; /* Orange border */
+  border-radius: 10px; /* Increased border radius */
+  background-color: #ffebcc; /* Light orange background */
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Orange shadow */
+}
+
+.complaint-container h1 {
+  text-align: center;
+  color: #ffa500; /* Orange text color */
+  font-size: 24px; /* Increased font size */
+}
+
+.complaint-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.complaint-container label {
+  font-weight: bold;
+  margin-bottom: 10px; /* Increased margin */
+  color: #ffa500; /* Orange text color */
+}
+
+.complaint-container input[type="text"],
+.complaint-container textarea {
+  padding: 15px; /* Increased padding */
+  margin-bottom: 15px; /* Increased margin */
+  border: 2px solid #ffa500; /* Orange border */
+  border-radius: 5px; /* Slightly rounded border */
+  background-color: #fff; /* White background */
+}
+
+.complaint-container textarea {
+  resize: vertical;
+}
+
+.complaint-container button[type="submit"] {
+  background-color: #ffa500; /* Orange background */
+  color: #fff;
+  padding: 15px 20px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px; /* Increased font size */
+  margin-top: 10px;
+}
+
+.complaint-container button[type="submit"]:hover {
+  background-color: #ff8000; /* Darker orange on hover */
+  margin-top: 10px;
+}
