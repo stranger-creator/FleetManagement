@@ -10,7 +10,7 @@ import Signup from './Components/auth/Signup'
 import Driver from './Components/Driver'
 import Complaint from './Components/Complaint'
 import DriverList from './Components/DriverList'
-
+import TodaySchedule from './Components/Owner/TodaySchedule'
 function App(){
   return(
     <>
@@ -27,7 +27,8 @@ function App(){
     <Route path="/driverinfo" element={<Driver />}></Route>
     <Route path="/complaint" element={<Complaint />}></Route>
     <Route path="/driverlist" element={<DriverList />}></Route>
- 
+    <Route path="/toda" element={<TodaySchedule />}></Route>
+
     
     
       </Routes>
