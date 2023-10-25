@@ -3,6 +3,7 @@ import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import axios from 'axios';
 import './Driver.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const Driver = () => {
   const [driverData, setDriverData] = useState(null);
@@ -71,8 +72,19 @@ const Driver = () => {
                     <p className="card-text">Loading driver information...</p>
                   )}
                 </div>
+                
               </div>
-              
+              <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+              <footer className="footer">
+        &copy; 2023 Your Company. All rights reserved.
+      </footer>
             </div>
            
           

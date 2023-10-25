@@ -66,7 +66,7 @@ const Signin = () => {
                 <div className="home-content">
                   <div className="sign-in-container">
                     <form onSubmit={signIn}>
-                      <h2>Sign In</h2>
+                      <h2 style={{fontFamily:'Times, serif'}}><b>Sign In</b></h2>
                       <input
                         type="email"
                         placeholder="Enter your email"

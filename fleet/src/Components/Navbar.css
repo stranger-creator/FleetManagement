@@ -1,6 +1,6 @@
 /* Navigation Bar */
 .navbar {
-  background-color: #202020; /* Dark background color */
+  background-color: #363636; /* Dark background color */
   color: #fff; /* Text color to white */
   position: fixed;
   top: 0;
@@ -35,6 +35,7 @@
   font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
+
   
   text-transform: uppercase;
 }
@@ -61,6 +62,7 @@
 
 .navbar li:hover {
   cursor: pointer;
+  color: #ff9900;
 }
 
 /* Toggle Button */

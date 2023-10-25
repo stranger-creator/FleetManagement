@@ -102,9 +102,9 @@ const Signup = () => {
   };
 
   return (
-    <div className='sign-in-container mt-5'>
+    <div className='sign-in-container mt-5' style={{ marginLeft: 'auto', marginRight: '395px', maxWidth: '400px' }}>
       <form onSubmit={signUp}>
-        <h2>Sign Up</h2>
+        <h2 style={{fontFamily:'Times, serif'}}><b>Sign Up</b></h2>
         <input
           type='text'
           placeholder='Full Name'
@@ -118,7 +118,7 @@ const Signup = () => {
           onChange={handleAgeChange}
         />
         <label>
-          Experience:
+          Experience:&nbsp;
           <select value={experience} onChange={handleExperienceChange}>
             <option value="1-2 years">1-2 years</option>
             <option value="2-10 years">2-10 years</option>

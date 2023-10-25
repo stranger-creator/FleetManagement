@@ -34,9 +34,7 @@ function App(){
       </Routes>
 
       </BrowserRouter>
-      <footer className="footer">
-        &copy; 2023 Your Company. All rights reserved.
-      </footer>
+      
     </>
   )
 }

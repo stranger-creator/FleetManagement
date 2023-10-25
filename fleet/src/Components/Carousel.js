@@ -22,7 +22,7 @@ export default function Carousel() {
       <div className="carousel-inner">
         <div className="carousel-item active" data-bs-interval="3000">
           <img
-            src="https://t3.ftcdn.net/jpg/03/18/66/58/360_F_318665813_dASvsm41OsFeJZqkh0u2InH9P6ayS8Cw.jpg"
+            src="https://techstory.in/wp-content/uploads/2019/02/fleet-management-banner.jpg"
             className="d-block w-100 carousel-image" // Add a class for the carousel images
             alt="Image not found error 404"
             style={imageStyle} // Apply the image style
@@ -33,7 +33,7 @@ export default function Carousel() {
         </div>
         <div className="carousel-item" data-bs-interval="3000">
           <img
-            src="https://ik.imagekit.io/fx/next/png/with-fleetx.png"
+            src="https://www.ebillity.com/wp-content/uploads/2020/07/post-fleet-management.jpg"
             className="d-block w-100 carousel-image" // Add a class for the carousel images
             alt="Image not found error 404"
             style={imageStyle} // Apply the image style

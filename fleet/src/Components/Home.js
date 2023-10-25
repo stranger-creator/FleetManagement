@@ -142,8 +142,11 @@ const Home = () => {
                 </p>
                 {/* Add more schedule locations as needed */}
               </ul>
+        
             </div>
-           
+            <footer className="footer">
+        &copy; 2023 Your Company. All rights reserved.
+      </footer>
           </div>
         </div>
       </div>

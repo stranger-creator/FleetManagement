@@ -1,0 +1,43 @@
+/* Add your CSS styles here */
+
+.schedule-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 500px;
+  }
+  
+  .card {
+    background-color: white;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+    margin-left: 200px; /* Added space between each card */
+  
+    width: 250px;
+  }
+  
+  .card:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    
+  }
+  
+  .card-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    
+  }
+  .bus-schedule-bg{
+    width:'200px';
+  }
