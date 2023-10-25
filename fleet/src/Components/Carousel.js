@@ -12,7 +12,7 @@ export default function Carousel() {
   };
 
   const imageStyle = {
-    height: '400px', // Set the desired height here
+    height: '350px', // Set the desired height here
     objectFit: 'cover',
   };
 
