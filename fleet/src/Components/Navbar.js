@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -23,7 +25,13 @@ const Navbar = () => {
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log('Signed out');
+        toast.success('You have been signed out.', {
+          position: 'top-right',
+          autoClose: 3000,
+        });
+
+        // Reload the page after signing out
+        delayedAction();
       })
       .catch((error) => console.log(error));
   };
@@ -41,6 +49,18 @@ const Navbar = () => {
     } else {
       setActiveDropdown(dropdownName);
     }
+  };
+  const delayedAction = () => {
+    // Add a 2-second delay before performing an action
+    setTimeout(() => {
+      // Code to execute after the delay
+      navigateToHomepage();
+      // Perform your action here
+    }, 2000);
+  };
+  const navigateToHomepage = () => {
+    // Use any navigation method to go to the homepage
+    window.location.reload(); // Replace 'homepage' with the actual route
   };
 
   return (
@@ -117,6 +137,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

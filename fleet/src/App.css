@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.footer {
+  color: rgb(0, 0, 0); /* White text color */
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 80%;
+  margin-left:20px; /* Center horizontally */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}

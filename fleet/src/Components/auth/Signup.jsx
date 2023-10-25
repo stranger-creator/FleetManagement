@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +16,7 @@ const Signup = () => {
 
   const signUp = (e) => {
     e.preventDefault();
-    
+
     setFirebaseError(null); // Reset Firebase error
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -30,19 +32,48 @@ const Signup = () => {
           email,
           password,
         };
-
+        const delayedAction = () => {
+          // Add a 2-second delay before performing an action
+          setTimeout(() => {
+            // Code to execute after the delay
+            navigateToHomepage();
+            // Perform your action here
+          }, 2000);
+        };
+        const navigateToHomepage = () => {
+          // Use any navigation method to go to the homepage
+          window.location.href = '/'; // Replace 'homepage' with the actual route
+        };
         // Make a POST request to your server
         axios.post('http://localhost:3000/signup', userData)
           .then((response) => {
             console.log('User registered successfully:', response.data);
+            // Display a success notification
+            toast.success('Registration successful!', {
+              position: 'top-right',
+              autoClose: 2000, // Close the notification after 2 seconds
+            });
+
+            // Navigate to the home page after successful registration
+            delayedAction()
           })
           .catch((error) => {
             console.error('Registration error:', error);
+            // Display an error notification
+            toast.error('Registration error', {
+              position: 'top-right',
+              autoClose: 2000,
+            });
           });
       })
       .catch((error) => {
         console.error('Firebase authentication error:', error);
         setFirebaseError(error.message); // Set the Firebase error message
+        // Display an error notification for Firebase authentication
+        toast.error(`Firebase authentication error: ${error.message}`, {
+          position: 'top-right',
+          autoClose: 2000,
+        });
       });
   };
 
@@ -115,6 +146,8 @@ const Signup = () => {
         {firebaseError && <p style={{ color: 'red' }}>{firebaseError}</p>}
         <button type='submit'>Sign Up</button>
       </form>
+      {/* Add the ToastContainer to display notifications */}
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 };
