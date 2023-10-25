@@ -49,7 +49,6 @@ const Driver = () => {
   };
 
   return (
-    <center>
      
             <div className={`driver-card ${isFlipped ? 'is-flipped' : ''}`}>
               <div className="driver-card-inner">
@@ -73,9 +72,10 @@ const Driver = () => {
                   )}
                 </div>
               </div>
+              
             </div>
+           
           
-    </center>
   );
 };
 

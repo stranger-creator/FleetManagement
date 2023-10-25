@@ -124,6 +124,7 @@ export default function BusSchedule() {
                   </div>
                 </div>
               ))}
+               
             </div>
           </div>
         </div>

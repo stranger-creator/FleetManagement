@@ -1,7 +1,7 @@
 /* Navigation Bar */
 .navbar {
-  background-color: #000;
-  color: #fff;
+  background-color: #202020; /* Dark background color */
+  color: #fff; /* Text color to white */
   position: fixed;
   top: 0;
   left: 0;

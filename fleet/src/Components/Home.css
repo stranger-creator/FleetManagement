@@ -1,40 +1,109 @@
-.fleet-home {
-    margin-left: 220px; /* Adjust the margin to align with the Navbar width */
-    padding: 20px; /* Add padding for spacing */
-  }
-  /* Home.css */
-
 /* Home.css */
-.home-container {
-  background-color: #fff; /* Set the background color to a light gray */
-  font-family: 'Arial, sans-serif'; /* Apply a custom font family */
-  padding: 20px; /* Add some padding for spacing */
+
+/* Container for the four boxes */
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 60px; /* Add margin to create space for the footer */
+  color: black; /* Make text color white for the dark theme */
 }
 
-.schedule-header {
-  font-size: 28px;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 20px;
-  background-color: rgb(121, 200, 228);
-  border-radius: 10px;
-  text-align: left; /* Align the text to the left */
-  padding: 20px 0 20px 20px; /* Add padding to the right side */
-}
-
-.home-content {
+/* Footer styling */
+.footer {
+  color: rgb(0, 0, 0); /* White text color */
   text-align: center;
-  margin-left: 90px;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Center align text within the home-content container */
-}
-.row-card{
-  justify-content: right;
-  align-items:end
-}
-.custom-driver-card {
-  margin-top: 120px; /* Adjust the top margin as needed */
-  margin-left: 250px; /* Adjust the left margin as needed */
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 80%;
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
 }
 
+/* First box (Driver Details) */
+.panel:nth-child(1) {
+  width: calc(75% - 20px); /* Make it 75% of the container width */
+  height: 60%; /* Make it 50% of the container height */
+}
+
+/* Second box (Vehicle Details) */
+.panel:nth-child(2) {
+  width: calc(25% - 20px); /* Make it 25% of the container width */
+  height: 50%; /* Make it 50% of the container height */
+}
+
+/* Third box (Routes) */
+.panel:nth-child(3) {
+  width: calc(50% - 20px);
+  height: 50%;
+}
+
+/* Fourth box (Status) */
+.panel:nth-child(4) {
+  width: calc(25% - 20px); /* Make it 25% of the container width */
+  height: 50%; /* Make it 50% of the container height */
+}
+
+/* Individual box styling with hover effect */
+.panel {
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  transition: transform 0.3s; /* Add transition for smooth movement */
+}
+
+.panel:hover {
+  transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);/* Move the card 5px to the right and 5px down on hover */
+}
+
+.panel h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Driver Details Styling */
+.driver-image {
+  margin-right: 20px;
+  size: 20%; /* Adjust the margin as needed */
+}
+
+.driver-image img {
+  width: 100px; /* Adjust the image size as needed */
+  height: 100px;
+}
+
+.driver-details {
+  display: flex;
+  align-items: center;
+}
+
+.driver-info {
+  flex: 1;
+}
+
+.driver-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.driver-info .card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.driver-info .card-text {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.card-title {
+  color: black; /* Change the text color as needed */
+}
