@@ -50,8 +50,8 @@ const Navbar = () => {
           <i className="fas fa-bars"></i>
         </div>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
+          <li >
+            <Link to="/" style={{fontSize:'18px',fontFamily:'serif'}}><b>Home</b></Link>
           </li>
           <li onClick={() => handleDropdownClick('liveTracking')}>
             Live Tracking

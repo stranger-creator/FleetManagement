@@ -33,7 +33,9 @@
 .navbar li {
   margin: 20px 0;
   font-size: 18px;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  
   text-transform: uppercase;
 }
 
@@ -41,9 +43,10 @@
 .navbar a {
   text-decoration: none;
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   transition: 0.3s;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .navbar a:hover {
