@@ -94,7 +94,7 @@ const Navbar = () => {
                   <Link to="/toda">Today's Schedule</Link>
                 </li>
                 <li>
-                  <Link to="/schedule/subitem2">Subitem 2</Link>
+                  <Link to="http://localhost:3000/">TESTING UPLOAD</Link>
                 </li>
               </ul>
             )}

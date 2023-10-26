@@ -1,4 +1,4 @@
-import './Complaint.css'; // Keep this line
+import './Complaint.css';
 import React, { useState } from 'react';
 
 function Complaint() {
@@ -26,16 +26,35 @@ function Complaint() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add code to handle the form submission, e.g., send a request to the server
-    console.log('Form submitted:', formData);
+
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append('name', formData.name);
+    formDataToSubmit.append('email', formData.email);
+    formDataToSubmit.append('complaint', formData.complaint);
+    formDataToSubmit.append('testImage', formData.image);
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formDataToSubmit,
+      });
+
+      if (response.status === 200) {
+        console.log('Form submitted successfully');
+      } else {
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
     <div className="complaint-container mt-5">
       <h1>Report the Complaint</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label htmlFor="name">Your Name:</label>
         <input
           type="text"
