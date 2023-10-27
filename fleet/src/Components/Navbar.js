@@ -78,7 +78,7 @@ const Navbar = () => {
             {activeDropdown === 'liveTracking' && (
               <ul className="dropdown">
                 <li>
-                  <Link to="/live-tracking/subitem1">Subitem 1</Link>
+                  <Link to="/maps">Tracking</Link>
                 </li>
                 <li>
                   <Link to="/live-tracking/subitem2">Subitem 2</Link>
