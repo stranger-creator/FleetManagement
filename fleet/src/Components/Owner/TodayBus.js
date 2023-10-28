@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '../Navbar';
 import './TodayBus.css';
 
@@ -133,10 +133,7 @@ export default function TodayBus() {
     width: '100%', // Adjusted width to take the full width of the column
   };
 
-  const highlightCardStyle = {
-    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Lighter shade of white
-    transform: 'scale(1.05)',
-  };
+  
 
   const headerStyle = {
     fontSize: '24px',

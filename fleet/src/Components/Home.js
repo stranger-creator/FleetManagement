@@ -7,6 +7,7 @@ import './Driver.css';
 import Carousel from './Carousel'; // Import the Carousel component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [driverData, setDriverData] = useState(null);
@@ -102,7 +103,7 @@ const Home = () => {
             </div>
 
             <div className="panel" style={{ position: 'relative' }}>
-              <h2>Routes</h2>
+            <Link to="/maps" style={{fontSize:'18px',fontFamily:'serif'}}><b>Routes</b></Link>
               <img
                 src="https://www.caronrentals.com/images/city/mangalore-to-puttur-round-trip_123653.jpg"
                 alt="Routes Map"
