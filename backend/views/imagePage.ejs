@@ -5,41 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Uploading</title>
     <style>
+        /* Apply styles from Complaint.css */
+        .complaint-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ffa500;
+            border-radius: 10px;
+            background-color: #ffebcc;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .complaint-container h1 {
+            text-align: center;
+            font-size: 24px;
+            font-family: Arial, sans-serif; /* Change the font */
+        }
+
+        .complaint-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .complaint-container label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffa500;
+        }
+
+        .complaint-container input[type="text"],
+        .complaint-container textarea {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #ffa500;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .complaint-container textarea {
+            resize: vertical;
+        }
+
+        .complaint-container button[type="submit"] {
+            background-color: #ffa500;
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .complaint-container button[type="submit"]:hover {
+            background-color: #ff8000;
+        }
+
+        /* Apply styles specific to your existing HTML structure */
         .image-container {
-    display: flex;
-    margin: 20px 0;
-}
+            display: flex;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
 
-.image-preview {
-    max-width: 150px; /* Adjust the size as needed */
-    max-height: 150px; /* Adjust the size as needed */
-    margin-right: 20px;
-}
+        .image-preview {
+            max-width: 150px;
+            max-height: 150px;
+            margin-right: 20px;
+        }
 
-.image-info {
-    flex: 1;
-}
+        .image-info {
+            flex: 1;
+        }
 
-h5, p {
-    margin: 0;
-}
+        h5, p {
+            margin: 0;
+        }
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #F9A825; /* Orange background color */
+            background-color: #ffffff; /* Change the background color */
             margin: 0;
             padding: 0;
         }
 
         h1 {
             text-align: center;
-            background-color: #FF5722; /* Dark orange background color for heading */
-            color: #fff;
             padding: 20px 0;
+            font-family: Arial, sans-serif; /* Change the font */
         }
 
         hr {
-            border: 1px solid #FF5722; /* Dark orange border color for horizontal line */
+            border: 1px solid #ffffff; /* Change the border color */
         }
 
         form {
@@ -58,7 +120,7 @@ h5, p {
         input[type="text"],
         textarea,
         input[type="file"] {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -66,7 +128,7 @@ h5, p {
         }
 
         button[type="submit"] {
-            background-color: #FF5722; /* Dark orange button background color */
+            background-color: #FF5722;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -75,11 +137,11 @@ h5, p {
         }
 
         button[type="submit"]:hover {
-            background-color: #FF5722; /* Dark orange button background color on hover */
+            background-color: #FF5722;
         }
 
-        h1, h5 {
-            text-align: center;
+        h5, p {
+            font-family: Arial, sans-serif; /* Change the font */
         }
 
         img {
@@ -88,23 +150,26 @@ h5, p {
             display: block;
             margin: 0 auto;
         }
-
-        .image-container {
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-        }
+        .action-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
     </style>
 </head>
-<!-- The rest of your HTML content remains the same -->
 <body>
-    <h1>To Upload Image on MongoDB</h1>
-    <hr />
-    <div>
+   
+    <div class="complaint-container " > <!-- Apply the .complaint-container class to your form -->
+        <h1>To Upload Image on MongoDB</h1>
         <form action="/" method="POST" enctype="multipart/form-data">
             <div>
-                <label for="name">Image Title</label>
+                <label for="name" style="width: 150px;">Image Title</label>
                 <input
                     type="text"
                     id="name"
@@ -128,7 +193,7 @@ h5, p {
                 <input type="file" id="image" name="image" required />
             </div>
             <div>
-                <button type="submit">Submit</button>
+                <button  type="submit" className="action-button ">Submit</button>
             </div>
         </form>
     </div>
@@ -152,7 +217,5 @@ h5, p {
         </div>
         <% }) %>
     </div>
-</body>
-</html> 
 </body>
 </html>

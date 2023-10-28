@@ -80,9 +80,7 @@ const Navbar = () => {
                 <li>
                   <Link to="/maps">Tracking</Link>
                 </li>
-                <li>
-                  <Link to="/live-tracking/subitem2">Subitem 2</Link>
-                </li>
+              
               </ul>
             )}
           </li>
