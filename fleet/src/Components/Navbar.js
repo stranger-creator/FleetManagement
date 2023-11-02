@@ -50,6 +50,9 @@ const Navbar = () => {
       setActiveDropdown(dropdownName);
     }
   };
+
+  const isUserAdmin = authUser && authUser.email === 'admin@gmail.com';
+
   const delayedAction = () => {
     // Add a 2-second delay before performing an action
     setTimeout(() => {
@@ -58,6 +61,7 @@ const Navbar = () => {
       // Perform your action here
     }, 2000);
   };
+
   const navigateToHomepage = () => {
     // Use any navigation method to go to the homepage
     window.location.reload(); // Replace 'homepage' with the actual route
@@ -70,8 +74,10 @@ const Navbar = () => {
           <i className="fas fa-bars"></i>
         </div>
         <ul>
-          <li >
-            <Link to="/" style={{fontSize:'18px',fontFamily:'serif'}}><b>Home</b></Link>
+          <li>
+            <Link to="/" style={{ fontSize: '18px', fontFamily: 'serif' }}>
+              <b>Home</b>
+            </Link>
           </li>
           <li onClick={() => handleDropdownClick('liveTracking')}>
             Live Tracking
@@ -80,7 +86,6 @@ const Navbar = () => {
                 <li>
                   <Link to="/maps">Tracking</Link>
                 </li>
-              
               </ul>
             )}
           </li>
@@ -91,9 +96,11 @@ const Navbar = () => {
                 <li>
                   <Link to="/toda">Today's Schedule</Link>
                 </li>
-                <li>
-                  <Link to="http://localhost:3000/">TESTING UPLOAD</Link>
-                </li>
+                {isUserAdmin && ( // Conditionally render "Add Route" for admin
+                  <li>
+                    <Link to="/addpath">Add Route</Link>
+                  </li>
+                )}
               </ul>
             )}
           </li>
@@ -104,9 +111,11 @@ const Navbar = () => {
                 <li>
                   <Link to="/driverinfo">Driver Details</Link>
                 </li>
-                <li>
-                  <Link to="/driverlist">Drivers list</Link>
-                </li>
+                {isUserAdmin && ( // Conditionally render "Add Route" for admin
+                  <li>
+                    <Link to="/driverlist">Driver List</Link>
+                  </li>
+                )}
               </ul>
             )}
           </li>
@@ -121,7 +130,7 @@ const Navbar = () => {
                   <Link to="/about">About Us</Link>
                 </li>
                 <li>
-                <Link to="/complaint">Complaint</Link>
+                  <Link to="http://localhost:3000/">Add a Fuel bill</Link>
                 </li>
               </ul>
             )}
@@ -129,9 +138,15 @@ const Navbar = () => {
         </ul>
         <div className="login-button">
           {authUser ? (
-            <button className="logout-button" onClick={userSignOut}>Sign Out</button>
+            <button className="logout-button" onClick={userSignOut}>
+              Sign Out
+            </button>
           ) : (
-            <button className="logout-button"><Link to="/login" className="login-button">Login</Link></button>
+            <button className="logout-button">
+              <Link to="/login" className="login-button">
+                Login
+              </Link>
+            </button>
           )}
         </div>
       </div>

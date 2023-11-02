@@ -22,6 +22,7 @@ const Home = () => {
     nextStop: 'Next Stop',
     liveLocation: 'Coordinates',
   });
+  const [totalCost, setTotalCost] = useState(null);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -37,7 +38,6 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    // Fetch driver details based on the authenticated user's email
     if (authUser) {
       axios
         .get(`http://localhost:3000/user/${authUser.email}`)
@@ -47,9 +47,23 @@ const Home = () => {
         .catch((error) => {
           console.error('Error fetching driver data:', error);
         });
+
+      // Fetch total cost based on the user's email
+
     }
   }, [authUser]);
-
+  useEffect(() => {
+    if (authUser) {
+      axios
+        .get(`http://localhost:3000/getTotalCost/${authUser.email}`)
+        .then((response) => {
+          setTotalCost(response.data.totalCost);
+        })
+        .catch((error) => {
+          console.error('Error fetching total cost:', error);
+        });
+    }
+  }, [authUser]);
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -143,7 +157,11 @@ const Home = () => {
                 </p>
                 {/* Add more schedule locations as needed */}
               </ul>
-        
+             
+            </div>
+            <div className="panel">
+              <h2>Total Money Spent On Vehicle</h2>
+              {totalCost !== null ? <p>Rupees {totalCost}</p> : <p>Loading total cost...</p>}
             </div>
             <footer className="footer">
         &copy; 2023 Your Company. All rights reserved.

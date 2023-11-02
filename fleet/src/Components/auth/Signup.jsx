@@ -12,18 +12,18 @@ const Signup = () => {
   const [age, setAge] = useState('');
   const [experience, setExperience] = useState('1-2 years');
   const [licenseNumber, setLicenseNumber] = useState('');
+  const [familiarRoutes, setFamiliarRoutes] = useState(''); // Add familiarRoutes
   const [firebaseError, setFirebaseError] = useState(null);
 
   const signUp = (e) => {
     e.preventDefault();
 
-    setFirebaseError(null); // Reset Firebase error
+    setFirebaseError(null);
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log('Firebase authentication success:', userCredential);
 
-        // Continue with the registration in MongoDB
         const userData = {
           name,
           age,
@@ -31,35 +31,23 @@ const Signup = () => {
           licenseNumber,
           email,
           password,
+          familiarRoutes, // Include the familiarRoutes field
         };
-        const delayedAction = () => {
-          // Add a 2-second delay before performing an action
-          setTimeout(() => {
-            // Code to execute after the delay
-            navigateToHomepage();
-            // Perform your action here
-          }, 2000);
-        };
-        const navigateToHomepage = () => {
-          // Use any navigation method to go to the homepage
-          window.location.href = '/'; // Replace 'homepage' with the actual route
-        };
-        // Make a POST request to your server
-        axios.post('http://localhost:3000/signup', userData)
+
+        axios
+          .post('http://localhost:3000/signup', userData)
           .then((response) => {
             console.log('User registered successfully:', response.data);
-            // Display a success notification
             toast.success('Registration successful!', {
               position: 'top-right',
-              autoClose: 2000, // Close the notification after 2 seconds
+              autoClose: 2000,
             });
-
-            // Navigate to the home page after successful registration
-            delayedAction()
+            setTimeout(() => {
+              window.location.href = '/';
+            }, 2000);
           })
           .catch((error) => {
             console.error('Registration error:', error);
-            // Display an error notification
             toast.error('Registration error', {
               position: 'top-right',
               autoClose: 2000,
@@ -68,8 +56,7 @@ const Signup = () => {
       })
       .catch((error) => {
         console.error('Firebase authentication error:', error);
-        setFirebaseError(error.message); // Set the Firebase error message
-        // Display an error notification for Firebase authentication
+        setFirebaseError(error.message);
         toast.error(`Firebase authentication error: ${error.message}`, {
           position: 'top-right',
           autoClose: 2000,
@@ -101,10 +88,14 @@ const Signup = () => {
     setLicenseNumber(e.target.value);
   };
 
+  const handleFamiliarRoutesChange = (e) => {
+    setFamiliarRoutes(e.target.value);
+  };
+
   return (
     <div className='sign-in-container mt-5' style={{ marginLeft: 'auto', marginRight: '395px', maxWidth: '400px' }}>
       <form onSubmit={signUp}>
-        <h2 style={{fontFamily:'Times, serif'}}><b>Sign Up</b></h2>
+        <h2 style={{ fontFamily: 'Times, serif' }}><b>Sign Up</b></h2>
         <input
           type='text'
           placeholder='Full Name'
@@ -132,6 +123,12 @@ const Signup = () => {
           onChange={handleLicenseNumberChange}
         />
         <input
+          type='text'
+          placeholder='Familiar Routes' // Add familiarRoutes input
+          value={familiarRoutes}
+          onChange={handleFamiliarRoutesChange}
+        />
+        <input
           type='email'
           placeholder='Enter your email'
           value={email}
@@ -146,7 +143,6 @@ const Signup = () => {
         {firebaseError && <p style={{ color: 'red' }}>{firebaseError}</p>}
         <button type='submit'>Sign Up</button>
       </form>
-      {/* Add the ToastContainer to display notifications */}
       <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );

@@ -6,7 +6,8 @@ var imageSchema = new mongoose.Schema({
 	{
 		data: Buffer,
 		contentType: String
-	}
+	},
+	cost:Number
 });
 
 module.exports = mongoose.model('Image', imageSchema);

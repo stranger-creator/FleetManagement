@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Uploading</title>
+    <title>Billing</title>
     <style>
         /* Apply styles from Complaint.css */
         .complaint-container {
@@ -166,20 +167,20 @@
 <body>
    
     <div class="complaint-container " > <!-- Apply the .complaint-container class to your form -->
-        <h1>To Upload Image on MongoDB</h1>
+        <h1>Cost Page</h1>
         <form action="/" method="POST" enctype="multipart/form-data">
             <div>
-                <label for="name" style="width: 150px;">Image Title</label>
+                <label for="name" style="width: 150px;">Email</label>
                 <input
                     type="text"
                     id="name"
-                    placeholder="Name"
+                    placeholder="Email"
                     name="name"
                     required
                 />
             </div>
             <div>
-                <label for="desc">Image Description</label>
+                <label for="desc">Billing Details</label>
                 <textarea
                     id="desc"
                     name="desc"
@@ -189,7 +190,18 @@
                 ></textarea>
             </div>
             <div>
-                <label for="image">Upload Image</label>
+                <label for="cost" style="width: 150px;">Cost</label>
+                <input
+                    type="number"
+                    id="cost"
+                    name="cost"
+                    placeholder="Cost"
+                    required
+                />
+            </div>
+            <br>
+            <div>
+                <label for="image">Upload Image Proof/invoice</label>
                 <input type="file" id="image" name="image" required />
             </div>
             <div>
@@ -205,14 +217,16 @@
         <% items.forEach(function(image) { %>
         <div class="image-container">
             <div>
+                <div class="image-info">
+                    <h5>Driver Name</h5>
+                    <h5><%= image.name %></h5>
+                    <h5>Bill details</h5>
+                    <p><%= image.desc %></p>
+                </div>
                 <img
                     src="data:image/<%= image.img.contentType %>;base64, <%= image.img.data.toString('base64') %>"
                     class="image-preview"
                 />
-                <div class="image-info">
-                    <h5><%= image.name %></h5>
-                    <p><%= image.desc %></p>
-                </div>
             </div>
         </div>
         <% }) %>

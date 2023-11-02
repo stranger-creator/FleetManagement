@@ -12,6 +12,7 @@ import Complaint from './Components/Complaint'
 import DriverList from './Components/DriverList'
 import TodaySchedule from './Components/Owner/TodaySchedule'
 import Maps from './Components/Maps'
+import UserDataForm from './Components/UploadRoutes'
 function App(){
   return(
     <>
@@ -30,6 +31,7 @@ function App(){
     <Route path="/driverlist" element={<DriverList />}></Route>
     <Route path="/toda" element={<TodaySchedule />}></Route>
     <Route path="/maps" element={<Maps />}></Route>
+    <Route path="/addpath" element={<UserDataForm/>}></Route>
 
     
     
