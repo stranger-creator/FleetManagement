@@ -130,22 +130,37 @@ app.get('/', (req, res) => {
   })
 });
 
-app.get('/search/:place', (req, res) => {
+// Endpoint to search for routes based on the place
+app.get('/search/:place', async (req, res) => {
   const searchPlace = req.params.place;
 
-  // Create a case-insensitive regular expression for the search
-  const searchRegex = new RegExp(searchPlace, 'i');
+  try {
+    // Create a case-insensitive regular expression for the search
+    const searchRegex = new RegExp(searchPlace, 'i');
 
-  // Search for users with familiarRoutes matching the search place (case-insensitive)
-  User.find({ familiarRoutes: searchRegex }, 'name')
-    .then(users => {
-      res.json(users);
-    })
-    .catch(err => {
-      console.error('Search error:', err);
-      res.status(500).json({ error: 'Server error' });
+    // Search for user routes where either the start or end matches the search place (case-insensitive)
+    const routes = await UserRoute.find({
+      $or: [
+        { start: searchRegex },
+        { end: searchRegex },
+      ],
     });
+
+    // Extract and return the start, end, startTime, and endTime for each matching route
+    const matchingRoutes = routes.map(route => ({
+      start: route.start,
+      end: route.end,
+      startTime: route.startTime,
+      endTime: route.endTime,
+    }));
+
+    res.json(matchingRoutes);
+  } catch (err) {
+    console.error('Search error:', err);
+    res.status(500).json({ error: 'Server error' });
+  }
 });
+
 
 
 // Register a user
@@ -186,6 +201,25 @@ app.get('/user/:email', (req, res) => {
     .catch(err => {
       res.status(500).json({ error: 'Server error' });
     });
+});
+
+app.get('/familiar-routes/:email', async (req, res) => {
+  try {
+    const { email } = req.params;
+
+    // Find the user by email and select the familiarRoutes field
+    const user = await User.findOne({ email }).select('familiarRoutes');
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Return the familiar routes
+    res.json(user.familiarRoutes);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
 });
 
 app.listen(port, () => {
