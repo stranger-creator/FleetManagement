@@ -1,0 +1,104 @@
+/* UserDataForm.css */
+.today-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif; /* Updated font-family */
+    height: 100vh;
+  }
+
+  .today-content {
+    max-width: 800px;
+    padding: 60px;
+    border: 1px solid #ffa500;
+    border-radius: 10px;
+    background-color: #ffebcc;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+    text-align: center;
+  }
+
+  .today-content h2 {
+    color: #ffa500;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .today-content .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .today-content label {
+    font-weight: bold;
+    color: #ffa500;
+  }
+
+  .today-content input[type="text"],
+  .today-content input[type="datetime-local"] {
+    padding: 15px;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  .today-content button[type="submit"] {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .today-content button[type="submit"]:hover {
+    background-color: #ff8000;
+  }
+  .route-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Adjust the gap as needed for spacing between cards */
+  }
+  
+  .route-card {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the width of each card as needed */
+    padding: 10px;
+    border: 1px solid #ffa500; /* Orange border */
+    border-radius: 5px;
+    background-color: #ffffff; /* Orange theme background color */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Orange theme box shadow */
+    max-width: 200px; /* Adjust the max-width as needed */
+    font-family: 'Arial', sans-serif; /* Set the desired font-family */
+  }
+  
+  .route-card strong {
+    color: #ffa500; /* Orange theme text color */
+    font-weight: bold; /* Bold font for strong tags */
+  }
+  
+  .search-button {
+    background-color: #ffa500; /* Orange background for the button */
+    color: #fff; /* White text color */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-button:hover {
+    background-color: #ff8000;
+    color: white;
+    
+    transition: background-color 0.3s ease;
+  }
+    
+  

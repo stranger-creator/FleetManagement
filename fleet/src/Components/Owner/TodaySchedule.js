@@ -1,11 +1,14 @@
+// SearchPlace.jsx
 import React, { useState, useEffect } from 'react';
 import { auth } from '../../firebase';
-import { onAuthStateChanged} from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
+import './TodaySchedule.css'; // Import your CSS file
+
 function SearchPlace() {
   const [matchingRoutes, setMatchingRoutes] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState(''); // Assuming you have a way to obtain the user's email
   const [authUser, setAuthUser] = useState(null);
+
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -18,6 +21,7 @@ function SearchPlace() {
       listen();
     };
   }, []);
+
   const handleSearch = async () => {
     setLoading(true);
     try {
@@ -47,31 +51,30 @@ function SearchPlace() {
   }
 
   return (
-    <div className="about-container">
-      <div className="image-container"></div>
-      <div>
-        <h1 style={{ color: 'black' }}>Search for Routes</h1>
-        <button onClick={handleSearch}>Search</button>
-        {loading && <p style={{ color: 'black' }}>Loading...</p>}
+    <div className="today-container">
+      <div className="today-content">
+        <h2>Search for Routes</h2>
+        <button className="search-button" onClick={handleSearch}>Search</button>
+        
+        {loading && <p>Loading...</p>}
         {matchingRoutes.length > 0 ? (
-          <div>
-            <h2 style={{ color: 'black' }}>Matching Routes:</h2>
-            <ul>
-              {matchingRoutes.map((route, index) => (
-                <li key={index} style={{ color: 'black' }}>
-                  <strong>Start:</strong> {route.start}
-                  <br />
-                  <strong>End:</strong> {route.end}
-                  <br />
-                  <strong>StartTime:</strong> {route.startTime}
-                  <br />
-                  <strong>EndTime:</strong> {route.endTime}
-                </li>
-              ))}
-            </ul>
+          
+          <div className="route-cards">
+            
+            {matchingRoutes.map((route, index) => (
+              <div className="route-card" key={index}>
+                <strong>Start:</strong> {route.start}
+                <br />
+                <strong>End:</strong> {route.end}
+                <br />
+                <strong>StartTime:</strong> {route.startTime}
+                <br />
+                <strong>EndTime:</strong> {route.endTime}
+              </div>
+            ))}
           </div>
         ) : (
-          <p style={{ color: 'black' }}>No matching routes found.</p>
+          <p>No matching routes found.</p>
         )}
       </div>
     </div>

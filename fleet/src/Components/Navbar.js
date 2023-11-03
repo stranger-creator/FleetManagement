@@ -93,9 +93,11 @@ const Navbar = () => {
             Schedule
             {activeDropdown === 'schedule' && (
               <ul className="dropdown">
-                <li>
-                  <Link to="/toda">Today's Schedule</Link>
-                </li>
+                {!isUserAdmin && ( // Conditionally render "Add Route" for admin
+                  <li>
+                    <Link to="/toda">Today's Schedule</Link>
+                  </li>
+                )}
                 {isUserAdmin && ( // Conditionally render "Add Route" for admin
                   <li>
                     <Link to="/addpath">Add Route</Link>
@@ -111,6 +113,11 @@ const Navbar = () => {
                 <li>
                   <Link to="/driverinfo">Driver Details</Link>
                 </li>
+                {isUserAdmin && ( // Conditionally render "Add Route" for admin
+                  <li>
+                    <Link to="/driverlist">Driver List</Link>
+                  </li>
+                )}
               </ul>
             )}
           </li>
