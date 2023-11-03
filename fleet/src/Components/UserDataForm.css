@@ -1,63 +1,60 @@
 /* UserDataForm.css */
-.about-container {
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ffa500; /* Orange border */
-    border-radius: 10px; /* Increased border radius */
-    background-color: #ffebcc; /* Light orange background */
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Orange shadow */
+.user-data-form-container {
+    display: flex;
     justify-content: center;
-    padding-right: 70px; /* Add left padding to reduce the left side */
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
   }
-  
-  .about-content {
+
+  .user-data-form-content {
+    max-width: 800px; /* Increase the max-width to make it larger */
+    padding: 60px; /* Increase padding for more space */
+    border: 1px solid #ffa500;
+    border-radius: 10px;
+    background-color: #ffebcc;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
     text-align: center;
   }
-  
-  .about-content h2 {
-    color: #ffa500; /* Orange text color */
-    font-size: 24px; /* Increased font size */
+
+  .user-data-form-content h2 {
+    color: #ffa500;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
-  
-  .about-content form {
+
+  .user-data-form-content .input-group {
     display: flex;
     flex-direction: column;
-    background-color: #ffebcc; /* Light orange background */
-    margin: 0 auto; /* Center the form within the container */
-    width: 100%; /* Make it take the full width of the container */
+    align-items: flex-start;
+    margin-bottom: 15px;
   }
-  
-  .about-content label {
+
+  .user-data-form-content label {
     font-weight: bold;
-    margin-bottom: 10px; /* Increased margin */
-    color: #ffa500; /* Orange text color */
+    color: #ffa500;
   }
-  
-  .about-content input[type="text"],
-  .about-content input[type="datetime-local"] {
-    padding: 15px; /* Increased padding */
-    margin-bottom: 15px; /* Increased margin */
-    border: 2px solid #ffa500; /* Orange border */
-    border-radius: 5px; /* Slightly rounded border */
-    background-color: #fff; /* White background */
+
+  .user-data-form-content input[type="text"],
+  .user-data-form-content input[type="datetime-local"] {
+    padding: 15px;
+    border: 2px solid #ffa500;
+    border-radius: 5px;
+    background-color: #fff;
   }
-  
-  .about-content button[type="submit"] {
-    background-color: #ffa500; /* Orange background */
+
+  .user-data-form-content button[type="submit"] {
+    background-color: #ffa500;
     color: #fff;
-    padding: 15px 20px; /* Increased padding */
+    padding: 15px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 18px; /* Increased font size */
+    font-size: 18px;
     margin-top: 10px;
   }
-  
-  .about-content button[type="submit"]:hover {
-    background-color: #ff8000; /* Darker orange on hover */
-    margin-top: 10px;
+
+  .user-data-form-content button[type="submit"]:hover {
+    background-color: #ff8000;
   }
-  
