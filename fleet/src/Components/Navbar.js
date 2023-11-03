@@ -111,11 +111,6 @@ const Navbar = () => {
                 <li>
                   <Link to="/driverinfo">Driver Details</Link>
                 </li>
-                {isUserAdmin && ( // Conditionally render "Add Route" for admin
-                  <li>
-                    <Link to="/driverlist">Driver List</Link>
-                  </li>
-                )}
               </ul>
             )}
           </li>
@@ -129,9 +124,11 @@ const Navbar = () => {
                 <li>
                   <Link to="/about">About Us</Link>
                 </li>
-                <li>
-                  <Link to="http://localhost:3000/">Add a Fuel bill</Link>
-                </li>
+                {!isUserAdmin && ( // Conditionally render "Add Route" for admin
+                  <li>
+                    <Link to="http://localhost:3000/">Add a Fuel bill</Link>
+                  </li>
+                )}
               </ul>
             )}
           </li>
